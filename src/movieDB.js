@@ -79,12 +79,20 @@ async function getTrendingMovies() {
 
 async function getMovieInfo(id) {
     const {data:movie} = await api(`movie/${id}`);
+    getRelatedMoviesId(id);
 
     peliculaPoster.src = `https://image.tmdb.org/t/p/w780${movie.backdrop_path}`;
     tituloPelicula.textContent = movie.title;
     sipnopsis.textContent = movie.overview;
     fechaLanzamiento.textContent = movie.release_date;
     Calificacion.textContent = movie.vote_average;
+
+
+}
+
+async function getRelatedMoviesId(id) {
+  
+  consumirApi(`movie/${id}/recommendations`,{},recomendadas, 20)
 
 }
 
@@ -109,4 +117,12 @@ document.querySelector('.listaPeliculasWrapper').addEventListener('wheel', (evt)
 document.querySelector('.listaCategoriasWrapper').addEventListener('wheel', (evt) => {
   evt.preventDefault();
   document.querySelector('.listaCategoriasWrapper').scrollLeft += evt.deltaY * 3;
+});
+
+
+//listaPeliculas
+
+document.querySelector('#listaPeliculas').addEventListener('wheel', (evt) => {
+  evt.preventDefault();
+  document.querySelector('#listaPeliculas').scrollLeft += evt.deltaY * 3;
 });

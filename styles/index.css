@@ -158,6 +158,11 @@ body{
     text-align: start;
 }
 
+.recomendaciones{
+    font-size: 2rem;
+    padding-left: 40px;
+}
+
 .datosPelicula {
     display: flex;
     flex-direction: row; /* Align image to the left and details to the right */

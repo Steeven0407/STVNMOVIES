@@ -6,6 +6,7 @@ const sipnopsis = document.getElementById('sipnopsis');
 const tituloPelicula = document.getElementById('tituloPelicula');
 const fechaLanzamiento = document.getElementById('fechaLanzamiento');
 const Calificacion = document.getElementById('Calificacion');
+const recomendadas = document.getElementById('recomendadas');
 
 
 
@@ -41,3 +42,4 @@ const contenedorPeliculasTendencias = document.getElementById('contenedorPelicul
 //botones
 const tendenciasBtn = document.getElementById('tendenciasButton');
 const volverBtnTendencias = document.getElementById('volverBtnTendencias');
+const titulo = document.getElementById('titulo');

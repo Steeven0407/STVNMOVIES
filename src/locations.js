@@ -26,8 +26,15 @@ botonDeBusquedaEnCategoria.addEventListener('click', () => {
     location.hash = '#search=' + buscadorInputEnCategoria.value.trim();
 });
 
+titulo.addEventListener('click', () => {
+    location.hash = '';
+});
+
 window.addEventListener('DOMContentLoaded', navigation, false);
 window.addEventListener('hashchange', navigation, false);
+
+changeBackGround();
+
 
 
 function navigation(){
@@ -71,7 +78,6 @@ function homePage() {
     
     getTrendingMoviesPreview();
     getCategoriesPreview();
-    changeBackGround();
 
 }
 function categoriesPage() {
