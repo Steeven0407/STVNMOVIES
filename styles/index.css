@@ -1,0 +1,336 @@
+*{
+    font-family: "Lilita One", serif;
+    color: rgba(255, 0, 0);
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+    overflow-x: hidden; /* Add this line */
+}
+
+  
+
+.navBar{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: linear-gradient(rgb(0, 0, 0) 10%, rgba(255, 255, 255, 0) 100%);
+}
+
+.navBar h2{
+    padding-left: 100px;
+    text-align: center;
+    color: rgba(255, 0, 0);
+    font-size: 2rem;
+}
+
+.navBar h3{
+    padding-left: 80px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.contenedorPrincipal{
+    background-image: url(/FRIEREN-COVER.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 900px;
+    /* background-repeat: no-repeat; */
+}
+
+.informacion{
+    transition: background-color 0.5s 50ms;
+    margin-left: 100px;
+    margin-top: 600px;
+    color: black;
+    border: none;
+    background-color: rgb(190, 189, 189);
+    width: 350px;
+    height: 100px;
+    font-size: 1.8rem;
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+.informacion:hover{
+    transition: background-color 0.5s 50ms;
+    background-color: rgb(100, 100, 100);
+    color: white;
+}
+.separador-1{
+    background: linear-gradient(rgba(255, 255, 255, 0) 10%, rgb(0, 0, 0) 50%);
+    width: 100%;
+    height: 110px;
+    margin-top: -50px;
+}
+
+.listaPeliculasWrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior:smooth ;
+}
+
+.listaPeliculasWrapper::-webkit-scrollbar {
+    height: 12px;
+}
+
+.listaPeliculasWrapper::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.listaPeliculasWrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 0, 0, 0.7);
+}
+
+.listaPeliculas{
+    padding-left: 60px;
+    padding-right: 60px;
+    display: inline-flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.pelicula{
+    flex: 0 0 auto;
+    height: 400px;
+    width: 250px;
+    margin-bottom: 15px;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.tendenciasTitulo{
+    margin-top: 55px;
+    padding-left: 3%;
+    text-align: start;
+    font-size: 2.2rem;
+}
+
+.listaCategoriasWrapper{
+    overflow-x: auto;
+    /* white-space: nowrap; */
+    scroll-behavior:smooth ;
+}
+
+.listaCategoriasWrapper::-webkit-scrollbar {
+    height: 12px;
+}
+
+.listaCategoriasWrapper::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.listaCategorias{
+    padding: 10px 60px;
+    display: inline-flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.categoria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    margin-left: 10px;
+    height: 200px;
+    color: white;
+    width: 200px;
+    background-color: red;
+    text-align: center;
+    font-size: 40px;
+    float: right;
+    word-break: break-all;
+    border-radius: 10px;
+}
+
+
+.informacionPelicula{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    text-align: start;
+}
+
+.datosPelicula {
+    display: flex;
+    flex-direction: row; /* Align image to the left and details to the right */
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+#tituloPelicula {
+    font-size: 2rem;
+    text-align: start;
+}
+
+#peliculaPoster {
+    width: 100%; 
+    max-width: 780px; 
+    height: auto; 
+    object-fit: cover;
+    object-position: top;
+    resize: both;
+}
+
+.datosPeliculaDetalles {
+    color: white;
+    width: 55%; /* Occupy the other half of the page */
+    margin-left: 20px; /* Add margin to separate from poster */
+}
+
+#fechaLanzamiento,#Calificacion,
+#sipnopsis{
+    font-size: 1.5rem;
+    
+}
+
+
+
+.informacionPelicula p{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.mainBar{
+    display: flex;
+    align-items: center;
+}
+
+.mainBar h1{
+    font-size: 2rem;
+    text-align: center;
+    padding-left: 40%;
+    margin-right: 20px;
+}
+
+#tituloPelicula{
+    font-size: 2rem;
+    padding-left: 40px;
+}
+#peliculaPoster{
+    width: 100%;
+    max-width: 780px;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+    resize: both;
+}
+
+
+.desactivado{
+    display: none;
+}
+
+.tituloCategoria{
+    margin-top: 55px;
+    padding-left: 3%;
+    text-align: start;
+    font-size: 2.2rem;
+}
+
+.volver{
+    content: "\2190";
+    font-size: 6rem;
+    padding-left: 25px;
+}
+
+.noScroll{
+    overflow: hidden;
+}
+
+.barraBusqueda{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 20px;
+}
+.buscador{
+    position: relative;
+    top: -9%;
+    left: 30%;
+    display: flex;
+    padding-left: 40%;
+    align-items: center;
+}
+
+.buscador input{
+    border: none;
+    width: 300px;
+    height: 40px;
+    font-size: 1.5rem;
+}
+
+.buscador button{
+    height: 45px;
+    font-size: 1.5rem;
+}
+
+.todasLasTendencias{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+.todasLasTendencias h1{
+    padding-left: 40px;
+    font-size: 2rem;
+}
+
+#tendenciasButton:hover{
+    cursor: pointer;
+    color: red;
+    transition: color 0.5s 50ms;
+}
+
+#volverBtnTendencias, #volverBtnCategoria, #volverBtnPelicula{
+    cursor: pointer;
+}
+
+.pointer{
+    cursor: pointer;
+}
+.bgrojo{
+    background-color: red;
+}
+
+
+#contenedorPeliculasCategoria, #contenedorPeliculasTendencias{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 8%;
+}
+
+.position{
+    position: relative;
+    left: 35%;
+    padding-top: -200px;
+}
+
+.buscadorEncategoria{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#buscadorInputEnCategoria{
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+}
+
+#botonDeBusquedaEnCategoria{
+    height: 35px;
+    font-size: 20px;
+}

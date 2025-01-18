@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <title>STVN MOVIES</title>
+</head>
+
+<body>
+        <div class="informacionPelicula" id="infoPelicula">
+            <div class="mainBar">
+                <span class="volver" id="volverBtnPelicula">&#8592;</span> 
+                <h1>STVN MOVIES</h1>
+            </div>
+            <h1 id="tituloPelicula">Titulo de la pelicula</h1>
+            <div class="datosPelicula">
+                <img src="FRIEREN-COVER.jpg" alt="Poster De la pelicula" id="peliculaPoster">
+                <div class="datosPeliculaDetalles">
+                    <h2>Fecha de lanzamiento</h2>
+                    <p id="fechaLanzamiento"></p>
+                    <h2>Calificacion</h2>
+                    <p id="Calificacion"></p>
+                    <h2>Sipnopsis</h2>
+                    <p id="sipnopsis"></p>
+                </div>
+            </div>
+                
+
+        </div>
+
+        <div id="todasLasTendencias" class="todasLasTendencias">
+        <span class="volver" id="volverBtnTendencias">&#8592;</span> 
+        <h1>tendencias</h1>
+            <div id="contenedorPeliculasTendencias"> </div>
+
+        </div>
+    
+
+        <section id="peliculasPorCategoria">
+            <div class="barraBusqueda">
+                    <span class="volver" id="volverBtnCategoria">&#8592;</span> 
+                <div class="buscadorEncategoria position" id="buscadorEnCategoria">
+                    <input type="text" id="buscadorInputEnCategoria" placeholder="Buscar...">
+                    <button id="botonDeBusquedaEnCategoria">Buscar</button>
+                </div>
+            </div>
+                
+                  <h2 class="tituloCategoria" id="tituloCategoria"></h2>
+            <div id="contenedorPeliculasCategoria"></div>
+        </section>
+
+    
+        <section class="contenedorPrincipal" id="contenedorPrincipal">
+            <section class="navBar">
+            <h2>STVN<br>MOVIES</h2>
+            <h3 id="tendenciasButton">TENDENCIAS</h3>
+            <!-- <h3>FAVORITAS</h3> -->
+             </section>
+
+            <div class="buscador" id="buscador">
+            <input type="text" id="buscadorInput" placeholder="Buscar...">
+            <button id="botonDeBusqueda">Buscar</button>
+            </div>
+    
+        </section>
+        <div class="separador-1" id="separador-1"></div>
+
+    
+
+    
+    <h2 class="tendenciasTitulo" id="PeliculasTendenciasTitulo">Tendencias</h2>
+    <div class="listaPeliculasWrapper" id="listaPeliculas">
+        <section class="listaPeliculas" id="tendencias">
+        </section>
+    </div>
+
+    <h2 class="tendenciasTitulo" id="categoriasTitulo">Categorias</h2>
+    <div class="listaCategoriasWrapper" id="listaCategorias">
+        <section class="listaCategorias" id="categorias">
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="src/secrets.js"></script>
+    <script src="src/nodes.js"></script>
+    <script src="src/movieDB.js"></script>
+    <script src="src/locations.js"></script>
+   
+</body>
+</html>
