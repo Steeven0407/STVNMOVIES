@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="styles/index.css" as="style" />
+    <link rel="preload" href="src/locations.js" as="script" />
     <link rel="stylesheet" href="styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,21 +35,29 @@
             <h2 class="recomendaciones">Recomendadas</h2>
             <div class="recomendadas listaPeliculasWrapper" id="recomendadasWrapper">
                 <section class="listaPeliculas" id="recomendadas">
+                    <div class="movieLoad"></div>
+                    <div class="movieLoad"></div>
+                    <div class="movieLoad"></div>
+
                 </section>
             </div>
 
 
-        </div>
+            </div>
 
-        <div id="todasLasTendencias" class="todasLasTendencias">
-        <span class="volver" id="volverBtnTendencias">&#8592;</span> 
-        <h1>tendencias</h1>
-            <div id="contenedorPeliculasTendencias"> </div>
-
-        </div>
+            <div id="todasLasTendencias" class="todasLasTendencias">
+            <span class="volver" id="volverBtnTendencias">&#8592;</span> 
+            <h1>tendencias</h1>
+            <div id="contenedorPeliculasTendencias"> 
+                <div class="movieLoad"></div>
+                <div class="movieLoad"></div>
+                <div class="movieLoad"></div>
+            </div>
+                
+            </div>
     
 
-        <section id="peliculasPorCategoria">
+            <section id="peliculasPorCategoria">
             <div class="barraBusqueda">
                     <span class="volver" id="volverBtnCategoria">&#8592;</span> 
                 <div class="buscadorEncategoria position" id="buscadorEnCategoria">
@@ -57,41 +67,60 @@
             </div>
                 
                   <h2 class="tituloCategoria" id="tituloCategoria"></h2>
-            <div id="contenedorPeliculasCategoria"></div>
-        </section>
+                  
+            <div id="contenedorPeliculasCategoria">
+                <div class="movieLoad"></div>
+                <div class="movieLoad"></div>
+                <div class="movieLoad"></div>
+            </div>
+            </section>
 
     
-        <section class="contenedorPrincipal" id="contenedorPrincipal">
-            <section class="navBar">
-            <h2>STVN<br>MOVIES</h2>
-            <h3 id="tendenciasButton">TENDENCIAS</h3>
-            <!-- <h3>FAVORITAS</h3> -->
+            <section class="contenedorPrincipal" id="contenedorPrincipal">
+                <section class="navBar">
+                <h2>STVN<br>MOVIES</h2>
+                <h3 id="tendenciasButton">TENDENCIAS</h3>
+                <!-- <h3>FAVORITAS</h3> -->
              </section>
 
-            <div class="buscador" id="buscador">
-            <input type="text" id="buscadorInput" placeholder="Buscar...">
-            <button id="botonDeBusqueda">Buscar</button>
+                <div class="buscador" id="buscador">
+                <input type="text" id="buscadorInput" placeholder="Buscar...">
+                <button id="botonDeBusqueda">Buscar</button>
+                </div>
+    
+            </section>
+         <div class="separador-1" id="separador-1"></div>
+
+    
+
+    
+             <h2 class="tendenciasTitulo" id="PeliculasTendenciasTitulo">Tendencias</h2>
+
+            <div class="listaPeliculasWrapper" id="listaPeliculas">
+             <section class="listaPeliculas" id="tendencias">
+                <div class="movieLoad"></div>
+                <div class="movieLoad"></div>
+                <div class="movieLoad"></div>
+                </section>
+             </div>
+
+            <h2 class="tendenciasTitulo" id="categoriasTitulo">Categorias</h2>
+                <div class="listaCategoriasWrapper" id="listaCategorias">
+             <section class="listaCategorias" id="categorias">
+                <div class="categoriLoad"></div>
+                <div class="categoriLoad"></div>
+                <div class="categoriLoad"></div>
+             </section>
             </div>
-    
-        </section>
-        <div class="separador-1" id="separador-1"></div>
+           
+            <h2 class="tendenciasTitulo" id="favoritasTitulo">Favoritas</h2>
+             <div class="listaPeliculasFavoritasWrapper" id="wrapperPeliculasFavoritas">
+                <section class="listaPeliculas" id="listaPeliculasFavoritas">
+                   
+                </section>
+             </div>
 
-    
-
-    
-    <h2 class="tendenciasTitulo" id="PeliculasTendenciasTitulo">Tendencias</h2>
-
-    <div class="listaPeliculasWrapper" id="listaPeliculas">
-        <section class="listaPeliculas" id="tendencias">
-        </section>
-    </div>
-
-    <h2 class="tendenciasTitulo" id="categoriasTitulo">Categorias</h2>
-    <div class="listaCategoriasWrapper" id="listaCategorias">
-        <section class="listaCategorias" id="categorias">
-        </section>
-    </div>
-
+    <footer class="footer">Pagina desarrollada por Steeven Andre Sayago, Api: TMDB</footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="src/secrets.js"></script>
     <script src="src/nodes.js"></script>

@@ -66,7 +66,7 @@ body{
     margin-top: -50px;
 }
 
-.listaPeliculasWrapper {
+.listaPeliculasWrapper, .listaPeliculasFavoritasWrapper {
     overflow-x: auto;
     white-space: nowrap;
     scroll-behavior:smooth ;
@@ -338,4 +338,113 @@ body{
 #botonDeBusquedaEnCategoria{
     height: 35px;
     font-size: 20px;
+}
+
+.footer{
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.5rem;
+    align-content: center;
+}
+
+
+.movieLoad{
+    width: 250px;
+    height: 400px;
+    background-color: rgba(255, 0, 0, 0.747);
+    margin-right: 10px;
+    margin-bottom: 15px;
+    animation: loading infinite 3s;
+}
+
+
+@keyframes loading {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    
+}
+
+.categoriLoad{
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 0, 0, 0.747);
+    margin-right: 10px;
+    margin-bottom: 15px;
+    animation: loading infinite 3s;
+}
+
+
+.no-image{
+    background-color: red;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+.no-image-poster{
+ min-height: 350px;   
+ height: 100%;
+ background-color: red;
+ color: white;
+ font-size: 2rem;
+ text-align: center;
+ align-items: center;
+ justify-content: center;
+ display: flex;
+ margin-left: 20px;
+}
+
+.no-image-recomendadas{
+ min-height: 150px;   
+ height: 100%;
+ background-color: red;
+ color: white;
+ font-size: 1.5rem;
+ text-align: center;
+ align-items: center;
+ justify-content: center;
+ display: flex;
+padding: 10px;
+border-radius: 10px;
+}
+
+.relative{
+    position: relative;
+}
+
+.favoriteBtn{
+    position:absolute;
+    top: 5px;
+    right: 15px;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+.favoriteBtn::before{
+    content: '🤍';
+}
+.favorited{
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px red;
+}
+
+.favorited:before{
+    content: '❤️';
 }

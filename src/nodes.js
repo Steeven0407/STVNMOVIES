@@ -19,6 +19,11 @@ const tendenciasWrapper = document.getElementById('listaPeliculas');
 const generosWrapper = document.getElementById('listaCategorias');
 const separador1 = document.getElementById('separador-1');
 
+const favoritasTitulo = document.getElementById('favoritasTitulo');
+const wrapperPeliculasFavoritas = document.getElementById('wrapperPeliculasFavoritas');
+const listaPeliculasFavoritas = document.getElementById('listaPeliculasFavoritas');
+
+
 //seccion de peliculas por categoria
 const peliculasPorCategoria = document.getElementById('peliculasPorCategoria');
 const categoriaTitulo = document.getElementById('tituloCategoria');

@@ -1,4 +1,7 @@
 let anterior = window.history.back();
+let page = 1;
+let maxPage;
+let infiniteScroll;
 
 tendenciasBtn.addEventListener('click', () => {
     location.hash = '#trends';
@@ -32,6 +35,9 @@ titulo.addEventListener('click', () => {
 
 window.addEventListener('DOMContentLoaded', navigation, false);
 window.addEventListener('hashchange', navigation, false);
+window.addEventListener('scroll', infiniteScroll, false);
+
+
 
 changeBackGround();
 
@@ -39,6 +45,11 @@ changeBackGround();
 
 function navigation(){
     console.log({location});
+
+    if(infiniteScroll){
+        window.removeEventListener('scroll', infiniteScroll, {passive: false});
+        infiniteScroll = undefined;
+    }
 
     if(location.hash.startsWith('#trends')){
         trendsPage();
@@ -51,6 +62,11 @@ function navigation(){
     }else {
         homePage();
     }
+
+    if(infiniteScroll){
+        window.addEventListener('scroll', infiniteScroll,  {passive: false});
+    }
+
 }
 
 
@@ -64,6 +80,10 @@ function homePage() {
     categoriasTitulo.classList.remove('desactivado');
     generosWrapper.classList.remove('desactivado');
     separador1.classList.remove('desactivado');
+    favoritasTitulo.classList.remove('desactivado');
+    wrapperPeliculasFavoritas.classList.remove('desactivado');
+    listaPeliculasFavoritas.classList.remove('desactivado');
+
     //desactivar pelicula especifica
     informacionPelicula.classList.add('desactivado');
     
@@ -78,8 +98,9 @@ function homePage() {
     
     getTrendingMoviesPreview();
     getCategoriesPreview();
-
+    getLikedMovies();
 }
+
 function categoriesPage() {
     peliculasPorCategoria.classList.remove('desactivado');
     categoriaTitulo.classList.remove('desactivado');
@@ -93,6 +114,9 @@ function categoriesPage() {
     tendenciasWrapper.classList.add('desactivado');
     generosWrapper.classList.add('desactivado');
     separador1.classList.add('desactivado');
+    favoritasTitulo.classList.add('desactivado');
+    wrapperPeliculasFavoritas.classList.add('desactivado');
+    listaPeliculasFavoritas.classList.add('desactivado');
 
     //desactivar pelicula especifica
     informacionPelicula.classList.add('desactivado');
@@ -110,8 +134,10 @@ function categoriesPage() {
     const finalName = categoryName.replace('%20', ' ')
 
     getMoviesByCategory(categoryId, finalName);
-
+  infiniteScroll = getPaginatedMoviesByCategory(categoryId);
+  window.addEventListener('scroll', infiniteScroll, { passive: false });
 }
+
 function moviePage() {
     console.log('movie');
     peliculaPoster.src = '';
@@ -127,7 +153,9 @@ function moviePage() {
     tendenciasWrapper.classList.add('desactivado');
     generosWrapper.classList.add('desactivado');
     separador1.classList.add('desactivado');
-
+    favoritasTitulo.classList.add('desactivado');
+    wrapperPeliculasFavoritas.classList.add('desactivado');
+    listaPeliculasFavoritas.classList.add('desactivado');
 
     //desactivar pagina de categorias
     volverBtnCategoria.classList.add('desactivado');
@@ -140,6 +168,7 @@ function moviePage() {
     const [_, id] = location.hash.split('=')
 
     getMovieInfo(id);
+    
 }
 
 function searchPage() {
@@ -162,7 +191,9 @@ function searchPage() {
     tendenciasWrapper.classList.add('desactivado');
     generosWrapper.classList.add('desactivado');
     separador1.classList.add('desactivado');
-
+    favoritasTitulo.classList.add('desactivado');
+    wrapperPeliculasFavoritas.classList.add('desactivado');
+    listaPeliculasFavoritas.classList.add('desactivado');
 
     //desactivar pelicula especifica
     informacionPelicula.classList.add('desactivado');
@@ -174,6 +205,8 @@ function searchPage() {
     
    
    getSearchMovies(query);
+  infiniteScroll = getSearchMoviesPaginated(query);
+  window.addEventListener('scroll', infiniteScroll, { passive: false });
 }
 function trendsPage() {
      todasLasTendencias.classList.remove('desactivado');
@@ -195,7 +228,12 @@ function trendsPage() {
     tendenciasWrapper.classList.add('desactivado');
     generosWrapper.classList.add('desactivado');
     separador1.classList.add('desactivado');
-
+    favoritasTitulo.classList.add('desactivado');
+    wrapperPeliculasFavoritas.classList.add('desactivado');
+    listaPeliculasFavoritas.classList.add('desactivado');
 
     getTrendingMovies()
+    infiniteScroll=getTrendingMoviesPaginated;
+    window.addEventListener('scroll', infiniteScroll, { passive: false });
+
 }
