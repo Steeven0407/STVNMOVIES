@@ -8,16 +8,16 @@ tendenciasBtn.addEventListener('click', () => {
 });
 
 volverBtnCategoria.addEventListener('click', () => {
-    location.hash = window.history.back().toString();
+    window.history.back();
 });
 
 volverBtnPelicula.addEventListener('click', () => {
-    location.hash = window.history.back().toString();
+ window.history.back();
 
 });
 
 volverBtnTendencias.addEventListener('click', () => {
-    location.hash = window.history.back().toString();
+    window.history.back();
 
 });
 
