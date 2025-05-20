@@ -1,4 +1,3 @@
-let anterior = window.history.back();
 let page = 1;
 let maxPage;
 let infiniteScroll;
