@@ -241,7 +241,7 @@ async function changeBackGround() {
   let i = 0;
 
   setInterval(() => {
-    contenedorPrincipal.style.transition = 'background-image 1s';
+    contenedorPrincipal.style.transition = 'background-image 2s ease-in-out';
     contenedorPrincipal.style.backgroundImage = `url('https://image.tmdb.org/t/p/original${movies[i].backdrop_path}')`;
     i = (i + 1) % movies.length; 
   }, 5000);
